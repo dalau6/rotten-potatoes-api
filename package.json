@@ -2,8 +2,12 @@
   "name": "rotten-potatoes-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rm -rf dist/* && tslint -c tslint.json -p    tsconfig.json --fix",
+    "build": "tsc && cp -rf package.json dist/package.json",
+    "prestart": "npm run build",
+    "start": "ts-node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
