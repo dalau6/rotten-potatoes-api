@@ -1,5 +1,8 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
+import { connect } from "./db/db";
+
+connect();
 
 const app = express();
 
